@@ -237,8 +237,68 @@ INSERT INTO horarios (fecha, duracion) VALUES
 ('2026-04-10', 0.50),
 -- 2017 (IDs 67-70)
 ('2017-01-15', 0.50), ('2017-03-18', 1.50),
-('2017-06-14', 0.75), ('2017-09-12', 1.00);
-
+('2017-06-14', 0.75), ('2017-09-12', 1.00),
+-- Citas adicionales para la consulta 9
+('2021-01-20', 1.00),   -- 71
+('2021-01-25', 0.50),   -- 72
+('2021-02-10', 1.00),   -- 73
+('2021-02-22', 0.75),   -- 74
+('2021-03-05', 1.50),   -- 75
+('2021-03-18', 0.50),   -- 76
+('2021-04-08', 1.00),   -- 77
+('2021-04-20', 0.75),   -- 78
+('2021-05-06', 0.50),   -- 79
+('2021-05-25', 1.00),   -- 80
+('2021-06-10', 1.50),   -- 81
+('2021-06-28', 0.50),   -- 82
+('2021-07-15', 1.00),   -- 83
+('2021-07-28', 0.75),   -- 84
+('2021-08-05', 0.50),   -- 85
+('2021-08-25', 1.00),   -- 86
+('2021-09-10', 0.75),   -- 87
+('2021-09-28', 1.50),   -- 88
+('2021-10-15', 0.50),   -- 89
+('2021-11-20', 1.00),   -- 90
+('2021-01-08', 1.00),  -- 91
+('2021-01-15', 0.50),  -- 92
+('2021-01-22', 1.50),  -- 93
+('2021-02-05', 0.75),  -- 94
+('2021-02-12', 1.00),  -- 95
+('2021-02-25', 0.50),  -- 96
+('2021-03-08', 1.00),  -- 97
+('2021-03-15', 0.75),  -- 98
+('2021-03-25', 0.50),  -- 99
+('2021-04-06', 1.00),  -- 100
+('2021-04-14', 0.50),  -- 101
+('2021-04-22', 1.50),  -- 102
+('2021-05-04', 1.00),  -- 103
+('2021-05-12', 0.75),  -- 104
+('2021-05-20', 0.50),  -- 105
+('2021-05-28', 1.00),  -- 106
+('2021-06-04', 0.50),  -- 107
+('2021-06-11', 1.00),  -- 108
+('2021-06-18', 0.75),  -- 109
+('2021-06-25', 1.50),  -- 110
+('2021-07-05', 0.50),  -- 111
+('2021-07-12', 1.00),  -- 112
+('2021-07-19', 0.75),  -- 113
+('2021-07-26', 0.50),  -- 114
+('2021-08-03', 1.00),  -- 115
+('2021-08-10', 0.75),  -- 116
+('2021-08-17', 0.50),  -- 117
+('2021-08-24', 1.00),  -- 118
+('2021-09-06', 0.50),  -- 119
+('2021-09-13', 1.00),  -- 120
+('2021-09-20', 0.75),  -- 121
+('2021-09-27', 1.50),  -- 122
+('2021-10-05', 0.50),  -- 123
+('2021-10-12', 1.00),  -- 124
+('2021-10-19', 0.75),  -- 125
+('2021-10-26', 0.50),  -- 126
+('2021-11-03', 1.00),  -- 127
+('2021-11-10', 0.75),  -- 128
+('2021-11-17', 0.50),  -- 129
+('2021-11-24', 1.00);  -- 130
 --PAGO (58 pagos)
 -- IDs: 1-58
 INSERT INTO pago (tipo_pago, pago_monto) VALUES
@@ -373,7 +433,91 @@ INSERT INTO cita (id_cliente_pelu, id_peluquero, id_horario, estado) VALUES
 (13, 5, 55, 'Completada'),  -- 57: Andrés en Pelu3
 (16, 7, 56, 'Completada'),  -- 58: Camila en Pelu4
 (30, 2, 57, 'Completada'),  -- 59: Florencia en Pelu1 (segunda pelu)
-(11, 6, 58, 'Completada');  -- 60: Valentina en Pelu3
+(11, 6, 58, 'Completada'),  -- 60: Valentina en Pelu3
+-- Citas adicional para la consulta 9
+-- Enero 2021
+(2, 2, 71, 'Completada'),   -- 61: Ana María Pelu1, Elena
+(6, 3, 72, 'Completada'),   -- 62: Roberto Pelu2, Juan
+-- Febrero 2021
+(7, 4, 73, 'Completada'),   -- 63: Francisca Pelu2, Patricia
+(11, 5, 74, 'Completada'),  -- 64: Valentina Pelu3, Sandra
+-- Marzo 2021
+(12, 6, 75, 'Completada'),  -- 65: Matías Pelu3, Ricardo
+(16, 7, 76, 'Completada'),  -- 66: Camila Pelu4, Fernando
+-- Abril 2021
+(3, 1, 77, 'Completada'),   -- 67: Sebastián Pelu1, Marco
+(17, 8, 78, 'Completada'),  -- 68: Felipe Pelu4, Cecilia
+-- Mayo 2021
+(4, 2, 79, 'Completada'),   -- 69: Javiera Pelu1, Elena
+(9, 4, 80, 'Completada'),   -- 70: Nicolás Pelu2, Patricia
+-- Junio 2021
+(13, 5, 81, 'Completada'),  -- 71: Andrés Pelu3, Sandra
+(18, 7, 82, 'Completada'),  -- 72: Catalina Pelu4, Fernando
+-- Julio 2021
+(5, 1, 83, 'Completada'),   -- 73: Diego Pelu1, Marco
+(10, 3, 84, 'Completada'),  -- 74: Ignacio Pelu2, Juan
+-- Agosto 2021
+(15, 6, 85, 'Completada'),  -- 75: Martina Pelu3, Ricardo
+(20, 8, 86, 'Completada'),  -- 76: Florencia Pelu4, Cecilia
+-- Septiembre 2021
+(1, 1, 87, 'Completada'),   -- 77: Carlos Pelu1, Marco
+(19, 8, 88, 'Completada'),  -- 78: Antonia Pelu4, Cecilia
+-- Octubre 2021
+(4, 2, 89, 'Completada'),   -- 79: Javiera Pelu1, Elena
+-- Noviembre 2021
+(9, 3, 90, 'Completada'),   -- 80: Nicolás Pelu2, Juan
+-- Más citas
+-- Enero 2021
+(3, 1, 91, 'Completada'),   -- 81: Sebastián Pelu1, Marco
+(4, 2, 92, 'Completada'),   -- 82: Javiera Pelu1, Elena
+(5, 1, 93, 'Completada'),   -- 83: Gabriel Pelu1, Marco
+-- Febrero 2021
+(6, 3, 94, 'Completada'),   -- 84: Roberto Pelu2, Juan
+(7, 4, 95, 'Completada'),   -- 85: Francisca Pelu2, Patricia
+(8, 3, 96, 'Completada'),   -- 86: Diego Pelu2, Juan
+-- Marzo 2021
+(11, 5, 97, 'Completada'),  -- 87: Valentina Pelu3, Sandra
+(12, 6, 98, 'Completada'),  -- 88: Matías Pelu3, Ricardo
+(13, 5, 99, 'Completada'),  -- 89: Andrés Pelu3, Sandra
+-- Abril 2021
+(1, 1, 100, 'Completada'),  -- 90: Carlos Pelu1, Marco
+(2, 2, 101, 'Completada'),  -- 91: Ana María Pelu1, Elena
+(3, 1, 102, 'Completada'),  -- 92: Sebastián Pelu1, Marco
+-- Mayo 2021
+(6, 3, 103, 'Completada'),  -- 93: Roberto Pelu2, Juan
+(9, 4, 104, 'Completada'),  -- 94: Nicolás Pelu2, Patricia
+(8, 3, 105, 'Completada'),  -- 95: Diego Pelu2, Juan
+(10, 4, 106, 'Completada'), -- 96: Ignacio Pelu2, Patricia
+-- Junio 2021
+(11, 5, 107, 'Completada'), -- 97: Valentina Pelu3, Sandra
+(15, 6, 108, 'Completada'), -- 98: Martina Pelu3, Ricardo
+(13, 5, 109, 'Completada'), -- 99: Andrés Pelu3, Sandra
+(14, 6, 110, 'Completada'), -- 100: Isidora Pelu3, Ricardo
+-- Julio 2021
+(1, 1, 111, 'Completada'),  -- 101: Carlos Pelu1, Marco
+(2, 2, 112, 'Completada'),  -- 102: Ana María Pelu1, Elena
+(5, 1, 113, 'Completada'),  -- 103: Gabriel Pelu1, Marco
+(4, 2, 114, 'Completada'),  -- 104: Javiera Pelu1, Elena
+-- Agosto 2021
+(16, 7, 115, 'Completada'), -- 105: Camila Pelu4, Fernando
+(17, 8, 116, 'Completada'), -- 106: Felipe Pelu4, Cecilia
+(18, 7, 117, 'Completada'), -- 107: Catalina Pelu4, Fernando
+(20, 8, 118, 'Completada'), -- 108: Florencia Pelu4, Cecilia
+-- Septiembre 2021
+(6, 3, 119, 'Completada'),  -- 109: Roberto Pelu2, Juan
+(8, 3, 120, 'Completada'),  -- 110: Diego Pelu2, Juan
+(9, 4, 121, 'Completada'),  -- 111: Nicolás Pelu2, Patricia
+(7, 4, 122, 'Completada'),  -- 112: Francisca Pelu2, Patricia
+-- Octubre 2021
+(11, 5, 123, 'Completada'), -- 113: Valentina Pelu3, Sandra
+(12, 6, 124, 'Completada'), -- 114: Matías Pelu3, Ricardo
+(13, 5, 125, 'Completada'), -- 115: Andrés Pelu3, Sandra
+(15, 6, 126, 'Completada'), -- 116: Martina Pelu3, Ricardo
+-- Noviembre 2021
+(16, 7, 127, 'Completada'), -- 117: Camila Pelu4, Fernando
+(17, 8, 128, 'Completada'), -- 118: Felipe Pelu4, Cecilia
+(18, 7, 129, 'Completada'), -- 119: Catalina Pelu4, Fernando
+(22, 8, 130, 'Completada'); -- 120: Roberto Pelu4, Cecilia
 
 -- DETALLE (uno por cita completada)
 -- Se omiten las citas canceladas (18 y 46)
@@ -436,7 +580,24 @@ INSERT INTO detalle (id_pago, id_cita) VALUES
 (55, 57),  -- 55: Andrés Pelu3 (2024)
 (56, 58),  -- 56: Camila Pelu4 (2024)
 (57, 59),  -- 57: Florencia Pelu1 (2024)
-(58, 60);  -- 58: Valentina Pelu3 (2024)
+(58, 60),  -- 58: Valentina Pelu3 (2024)
+-- Citas adicionales para la consulta 9
+(1, 61), (2, 62), (3, 63), (4, 64),
+(5, 65), (6, 66), (7, 67), (8, 68),
+(9, 69), (10, 70), (11, 71), (12, 72),
+(13, 73), (14, 74), (15, 75), (16, 76),
+(17, 77), (18, 78), (19, 79), (20, 80),
+(1, 81),  (2, 82),  (3, 83),
+(4, 84),  (5, 85),  (6, 86),
+(7, 87),  (8, 88),  (9, 89),
+(10, 90), (11, 91), (12, 92),
+(13, 93), (14, 94), (15, 95), (16, 96),
+(17, 97), (18, 98), (19, 99), (20, 100),
+(21, 101),(22, 102),(23, 103),(24, 104),
+(25, 105),(26, 106),(27, 107),(28, 108),
+(29, 109),(30, 110),(31, 111),(32, 112),
+(33, 113),(34, 114),(35, 115),(36, 116),
+(37, 117),(38, 118),(39, 119),(40, 120);
 
 -- SERVICIO_DETALLE
 -- Servicios asociados a cada detalle
