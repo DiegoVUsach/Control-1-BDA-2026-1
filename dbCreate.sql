@@ -5,12 +5,14 @@
 -- Se habrá creado la base de datos peluquerias_db
 -- Conectarse a "peluquerias_db" y empezar a ejecutar este .sql
 
+DROP TABLE IF EXISTS comuna CASCADE;
 CREATE TABLE comuna (
     id_comuna SERIAL,
     nombre VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_comuna)
 );
 
+DROP TABLE IF EXISTS servicio CASCADE;
 CREATE TABLE servicio (
     id_servicio SERIAL,
     tipo_servicio VARCHAR(100) NOT NULL,
@@ -18,6 +20,7 @@ CREATE TABLE servicio (
     PRIMARY KEY (id_servicio)
 );
 
+DROP TABLE IF EXISTS producto CASCADE;
 CREATE TABLE producto (
     id_producto SERIAL,
     nombre_producto VARCHAR(100) NOT NULL,
@@ -25,6 +28,7 @@ CREATE TABLE producto (
     PRIMARY KEY (id_producto)
 );
 
+DROP TABLE IF EXISTS pago CASCADE;
 CREATE TABLE pago (
     id_pago SERIAL,
     tipo_pago VARCHAR(50) NOT NULL,
@@ -32,6 +36,7 @@ CREATE TABLE pago (
     PRIMARY KEY (id_pago)
 );
 
+DROP TABLE IF EXISTS horarios CASCADE;
 CREATE TABLE horarios (
     id_horarios SERIAL,
     fecha DATE NOT NULL,
@@ -39,6 +44,7 @@ CREATE TABLE horarios (
     PRIMARY KEY (id_horarios)
 );
 
+DROP TABLE IF EXISTS cliente CASCADE;
 CREATE TABLE cliente (
     id_cliente SERIAL,
     nombre VARCHAR(100) NOT NULL,
@@ -49,6 +55,7 @@ CREATE TABLE cliente (
         REFERENCES comuna(id_comuna)
 );
 
+DROP TABLE IF EXISTS peluqueria CASCADE;
 CREATE TABLE peluqueria (
     id_peluqueria SERIAL,
     nombre VARCHAR(100) NOT NULL,
@@ -59,6 +66,7 @@ CREATE TABLE peluqueria (
         REFERENCES comuna(id_comuna)
 );
 
+DROP TABLE IF EXISTS empleado CASCADE;
 CREATE TABLE empleado (
     id_empleado SERIAL,
     id_comuna INT NOT NULL,
@@ -71,6 +79,7 @@ CREATE TABLE empleado (
         REFERENCES peluqueria(id_peluqueria)
 );
 
+DROP TABLE IF EXISTS cliente_pelu CASCADE;
 CREATE TABLE cliente_pelu (
     id_cliente_pelu SERIAL,
     id_cliente INT NOT NULL,
@@ -82,6 +91,7 @@ CREATE TABLE cliente_pelu (
         REFERENCES peluqueria(id_peluqueria)
 );
 
+DROP TABLE IF EXISTS sueldo CASCADE;
 CREATE TABLE sueldo (
     id_sueldo SERIAL,
     monto INT NOT NULL,
@@ -92,6 +102,7 @@ CREATE TABLE sueldo (
         REFERENCES empleado(id_empleado)
 );
 
+DROP TABLE IF EXISTS peluquero CASCADE;
 CREATE TABLE peluquero (
     id_peluquero SERIAL,
     id_empleado INT NOT NULL,
@@ -100,6 +111,7 @@ CREATE TABLE peluquero (
         REFERENCES empleado(id_empleado)
 );
 
+DROP TABLE IF EXISTS cita CASCADE;
 CREATE TABLE cita (
     id_cita SERIAL,
     id_cliente_pelu INT NOT NULL,
@@ -115,6 +127,7 @@ CREATE TABLE cita (
         REFERENCES horarios(id_horarios)
 );
 
+DROP TABLE IF EXISTS detalle CASCADE;
 CREATE TABLE detalle (
     id_detalle SERIAL,
     id_pago INT NOT NULL,
@@ -126,6 +139,7 @@ CREATE TABLE detalle (
         REFERENCES cita(id_cita)
 );
 
+DROP TABLE IF EXISTS servicio_detalle CASCADE;
 CREATE TABLE servicio_detalle (
     id_servicio_detalle SERIAL,
     id_servicio INT NOT NULL,
@@ -138,6 +152,7 @@ CREATE TABLE servicio_detalle (
         REFERENCES detalle(id_detalle)
 );
 
+DROP TABLE IF EXISTS producto_detalle CASCADE;
 CREATE TABLE producto_detalle (
     id_producto_detalle SERIAL,
     id_producto INT NOT NULL,
@@ -149,5 +164,3 @@ CREATE TABLE producto_detalle (
     FOREIGN KEY (id_detalle)
         REFERENCES detalle(id_detalle)
 );
-
-
