@@ -1,0 +1,25 @@
+INSTRUCCIONES DE EJECUCION
+
+NOTA: Ejecutar los comandos uno por uno y esperar a que termine 
+el anterior antes de copiar el siguiente.
+
+NOTA: ASEGURARSE DE TENER INSTALADO DOCKER
+
+PASO 1: Abrir la terminal y entrar a la carpeta del proyecto
+cd Control-1-BDA-2026-1
+
+
+PASO 2: Levantar el contenedor de Docker
+docker compose up -d
+
+
+PASO 3: Crear la estructura de la base de datos
+docker exec -i control-1-bda-2026-1-db-1 psql -U postgres < dbCreate.sql
+
+
+PASO 4: Cargar los datos en las tablas
+docker exec -i control-1-bda-2026-1-db-1 psql -U postgres < loadData.sql
+
+
+PASO 5: Ejecutar consultas y validaciones
+docker exec -i control-1-bda-2026-1-db-1 psql -U postgres < runStatements.sql
